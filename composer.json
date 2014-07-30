@@ -1,0 +1,27 @@
+{
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4",
+        "zendframework/zendframework1": "dev-master",
+        "guilhermeblanco/zendframework1-doctrine2": "dev-master",
+        "beberlei/DoctrineExtensions" : "dev-master",
+        "gedmo/doctrine-extensions": "dev-master",
+        "doctrine/mongodb": "dev-master",
+        "spekkionu/zfdebug": "dev-master",
+        "komola/bootstrap-zend-framework": "dev-master",
+        "ruflin/elastica": "dev-master",
+        "lciolecki/zf-extensions-library": "dev-master",
+        "lciolecki/cron-jobs-manager": "dev-master",
+        "phploc/phploc": "dev-master",
+        "phpmd/phpmd": "dev-master",
+        "sebastian/phpcpd": "dev-master"
+    },
+    "autoload": {
+        "psr-2": {
+            "System": "library/"
+        },
+        "files": [
+            "library/functions.php"
+        ]
+    }
+}
