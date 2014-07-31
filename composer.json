@@ -1,4 +1,20 @@
 {
+    "name": "",
+    "homepage": "http://www.project-site.com",
+    "description": "",
+    "keywords": [],
+    "authors": [
+        {
+            "name": "Łukasz Ciołecki",
+            "email": "lukasz.ciolecki@email.com",
+            "role": "Programmer"
+        }
+    ],
+    "support": {
+        "email": "support@email.com"
+    },
+    "version": "0.0.1",
+    "type": "project",
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.4",
@@ -9,15 +25,22 @@
         "spekkionu/zfdebug": "dev-master",
         "komola/bootstrap-zend-framework": "dev-master",
         "ruflin/elastica": "dev-master",
+        "mnapoli/php-di": "dev-master",
         "lciolecki/zf-extensions-library": "dev-master",
         "lciolecki/cron-jobs-manager": "dev-master"
     },
+    "require-dev": {
+        "phpunit/phpunit": "dev-master",
+        "phploc/phploc": "dev-master",
+        "phpmd/phpmd": "dev-master",
+        "sebastian/phpcpd": "dev-master"
+    },
     "autoload": {
-        "psr-2": {
-            "System": "library/"
+        "psr-4": {
+            "System\\": "src/"
         },
         "files": [
-            "library/functions.php"
+            "src/functions.php"
         ]
     }
 }
