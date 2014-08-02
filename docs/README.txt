@@ -14,13 +14,13 @@ Setting Up Your VHOST
 The following is a sample VHOST you might want to consider for your project.
 
 <VirtualHost *:80>
-   DocumentRoot "/home/lciolecki/www/zf-boilerplate/public"
+   DocumentRoot "/home/mart/www/zf-boilerplate/public"
    ServerName zf-boilerplate.local
 
    # This should be omitted in the production environment
    SetEnv APPLICATION_ENV development
 
-   <Directory "/home/lciolecki/www/zf-boilerplate/public">
+   <Directory "/home/mart/www/zf-boilerplate/public">
        Options Indexes MultiViews FollowSymLinks
        AllowOverride All
        Order allow,deny

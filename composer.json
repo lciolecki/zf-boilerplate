@@ -24,7 +24,6 @@
         "gedmo/doctrine-extensions": "dev-master",
         "spekkionu/zfdebug": "dev-master",
         "komola/bootstrap-zend-framework": "dev-master",
-        "ruflin/elastica": "dev-master",
         "mnapoli/php-di": "dev-master",
         "lciolecki/zf-extensions-library": "dev-master",
         "lciolecki/cron-jobs-manager": "dev-master"
