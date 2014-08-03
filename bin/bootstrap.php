@@ -1,5 +1,6 @@
 <?php
 
+//Require init autoloader
 require_once(realpath(dirname(__FILE__) . '/..') . '/init_autoloader.php');
 
 // Create application, bootstrap, and run

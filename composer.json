@@ -16,6 +16,7 @@
     "version": "0.0.1",
     "type": "project",
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.4",
         "zendframework/zendframework1": "dev-master",
@@ -24,7 +25,9 @@
         "gedmo/doctrine-extensions": "dev-master",
         "spekkionu/zfdebug": "dev-master",
         "komola/bootstrap-zend-framework": "dev-master",
-        "mnapoli/php-di": "dev-master",
+        "mnapoli/php-di": "~4.0",
+        "mnapoli/php-di-zf1": "*",
+        "ocramius/generated-hydrator": "dev-master",
         "lciolecki/zf-extensions-library": "dev-master",
         "lciolecki/cron-jobs-manager": "dev-master"
     },
@@ -35,7 +38,7 @@
         "sebastian/phpcpd": "dev-master"
     },
     "autoload": {
-        "psr-4": {
+        "psr-0": {
             "System\\": "src/"
         },
         "files": [
