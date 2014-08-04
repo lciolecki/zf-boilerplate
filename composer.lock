@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "977712ea498d86b7068de20132c539e3",
+    "hash": "30e7bb5f4f771a1505135279bdcba1f7",
     "packages": [
         {
             "name": "beberlei/DoctrineExtensions",
@@ -718,17 +718,17 @@
             "time": "2014-03-03 02:01:23"
         },
         {
-            "name": "komola/bootstrap-zend-framework",
+            "name": "lciolecki/bootstrap-zend-framework",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/komola/Bootstrap-Zend-Framework.git",
-                "reference": "6c09d570f26b56e9f5fbaeabd9d449d4f00bf255"
+                "url": "https://github.com/lciolecki/Bootstrap-Zend-Framework.git",
+                "reference": "6eb4d7a806c059f50ed4fa6cbf2b56c5f04ed725"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/komola/Bootstrap-Zend-Framework/zipball/6c09d570f26b56e9f5fbaeabd9d449d4f00bf255",
-                "reference": "6c09d570f26b56e9f5fbaeabd9d449d4f00bf255",
+                "url": "https://api.github.com/repos/lciolecki/Bootstrap-Zend-Framework/zipball/6eb4d7a806c059f50ed4fa6cbf2b56c5f04ed725",
+                "reference": "6eb4d7a806c059f50ed4fa6cbf2b56c5f04ed725",
                 "shasum": ""
             },
             "require": {
@@ -741,9 +741,6 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "include-path": [
-                "library/"
-            ],
             "license": [
                 "MIT"
             ],
@@ -755,7 +752,7 @@
                 }
             ],
             "description": "Twitter bootstrap for ZF1",
-            "time": "2013-01-23 10:24:44"
+            "time": "2014-08-04 12:50:05"
         },
         {
             "name": "lciolecki/cron-jobs-manager",
@@ -825,6 +822,45 @@
                 "php"
             ],
             "time": "2014-03-16 14:53:05"
+        },
+        {
+            "name": "lciolecki/zf-debug",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lciolecki/zf-debug.git",
+                "reference": "f19bb5d3f0e81ba0d13cd090ecd1125a39f3de0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lciolecki/zf-debug/zipball/f19bb5d3f0e81ba0d13cd090ecd1125a39f3de0a",
+                "reference": "f19bb5d3f0e81ba0d13cd090ecd1125a39f3de0a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "zendframework/zendframework1": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ZFDebug": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "ZFDebug - a debug bar for Zend Framework",
+            "homepage": "https://github.com/lciolecki/zf-debug",
+            "keywords": [
+                "ZFDebug",
+                "Zend Framework",
+                "doctrine",
+                "doctrine2",
+                "php"
+            ],
+            "time": "2014-08-04 22:03:23"
         },
         {
             "name": "lciolecki/zf-extensions-library",
@@ -1181,26 +1217,27 @@
         },
         {
             "name": "ocramius/proxy-manager",
-            "version": "0.5.1",
+            "version": "0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ocramius/ProxyManager.git",
-                "reference": "eaaf10f9a24ffd79a3e388809f6d61f229e261bd"
+                "reference": "3b3b7101b1eea62afe039db50faee0d3a9e3e330"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/ProxyManager/zipball/eaaf10f9a24ffd79a3e388809f6d61f229e261bd",
-                "reference": "eaaf10f9a24ffd79a3e388809f6d61f229e261bd",
+                "url": "https://api.github.com/repos/Ocramius/ProxyManager/zipball/3b3b7101b1eea62afe039db50faee0d3a9e3e330",
+                "reference": "3b3b7101b1eea62afe039db50faee0d3a9e3e330",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
-                "zendframework/zend-code": ">2.2.5,<3.0"
+                "zendframework/zend-code": "2.*"
             },
             "require-dev": {
-                "ext-phar": "*",
-                "phpunit/phpunit": "~3.7",
-                "squizlabs/php_codesniffer": "1.5.*"
+                "phpmd/phpmd": "1.4.*",
+                "phpunit/phpunit": ">=3.7",
+                "satooshi/php-coveralls": "~0.6",
+                "squizlabs/php_codesniffer": "1.4.*"
             },
             "suggest": {
                 "ocramius/generated-hydrator": "To have very fast object to array to object conversion for ghost objects",
@@ -1212,7 +1249,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.6.x-dev"
+                    "dev-master": "0.5.x-dev"
                 }
             },
             "autoload": {
@@ -1241,34 +1278,7 @@
                 "proxy pattern",
                 "service proxies"
             ],
-            "time": "2014-03-12 14:00:19"
-        },
-        {
-            "name": "spekkionu/zfdebug",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spekkionu/ZFDebug.git",
-                "reference": "359a4423f7850c41c9af4b3998b335d815f1e220"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spekkionu/ZFDebug/zipball/359a4423f7850c41c9af4b3998b335d815f1e220",
-                "reference": "359a4423f7850c41c9af4b3998b335d815f1e220",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "library/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "description": "Debug bar for Zend Framework 1",
-            "time": "2012-09-17 05:19:50"
+            "time": "2013-11-30 15:00:46"
         },
         {
             "name": "symfony/console",
@@ -1378,38 +1388,29 @@
         },
         {
             "name": "zendframework/zend-code",
-            "version": "2.3.0",
+            "version": "2.0.3",
             "target-dir": "Zend/Code",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/Component_ZendCode.git",
-                "reference": "7eb108341ff6c9ec240764a11270f2d12934b733"
+                "reference": "a2692a33e8daee158b8348da40e57777f4ac7a87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/Component_ZendCode/zipball/7eb108341ff6c9ec240764a11270f2d12934b733",
-                "reference": "7eb108341ff6c9ec240764a11270f2d12934b733",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendCode/zipball/a2692a33e8daee158b8348da40e57777f4ac7a87",
+                "reference": "a2692a33e8daee158b8348da40e57777f4ac7a87",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.23",
-                "zendframework/zend-eventmanager": "self.version"
+                "php": ">=5.3.3"
             },
             "require-dev": {
-                "doctrine/common": ">=2.1",
-                "zendframework/zend-stdlib": "self.version"
+                "doctrine/common": ">=2.1"
             },
             "suggest": {
-                "doctrine/common": "Doctrine\\Common >=2.1 for annotation features",
-                "zendframework/zend-stdlib": "Zend\\Stdlib component"
+                "doctrine/common": "Doctrine\\Common >=2.1 for annotation features"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2-dev",
-                    "dev-develop": "2.3-dev"
-                }
-            },
             "autoload": {
                 "psr-0": {
                     "Zend\\Code\\": ""
@@ -1424,62 +1425,21 @@
                 "code",
                 "zf2"
             ],
-            "time": "2014-03-14 16:20:47"
-        },
-        {
-            "name": "zendframework/zend-eventmanager",
-            "version": "2.3.0",
-            "target-dir": "Zend/EventManager",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zendframework/Component_ZendEventManager.git",
-                "reference": "048164ee81854942667ffdda3030ce06caa79bb5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/Component_ZendEventManager/zipball/048164ee81854942667ffdda3030ce06caa79bb5",
-                "reference": "048164ee81854942667ffdda3030ce06caa79bb5",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.23",
-                "zendframework/zend-stdlib": "self.version"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2-dev",
-                    "dev-develop": "2.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Zend\\EventManager\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "keywords": [
-                "eventmanager",
-                "zf2"
-            ],
-            "time": "2014-03-14 16:21:05"
+            "time": "2012-10-17 12:16:29"
         },
         {
             "name": "zendframework/zend-stdlib",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "target-dir": "Zend/Stdlib",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/Component_ZendStdlib.git",
-                "reference": "d1c481b8a43f2f079b16d3567960ba539e9dacaa"
+                "reference": "c1f4830018b5d4f034d32fa01a9e17ea176f56f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/Component_ZendStdlib/zipball/d1c481b8a43f2f079b16d3567960ba539e9dacaa",
-                "reference": "d1c481b8a43f2f079b16d3567960ba539e9dacaa",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendStdlib/zipball/c1f4830018b5d4f034d32fa01a9e17ea176f56f6",
+                "reference": "c1f4830018b5d4f034d32fa01a9e17ea176f56f6",
                 "shasum": ""
             },
             "require": {
@@ -1498,8 +1458,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev",
-                    "dev-develop": "2.3-dev"
+                    "dev-master": "2.3-dev",
+                    "dev-develop": "2.4-dev"
                 }
             },
             "autoload": {
@@ -1515,7 +1475,7 @@
                 "stdlib",
                 "zf2"
             ],
-            "time": "2014-03-14 16:22:22"
+            "time": "2014-04-15 15:28:48"
         },
         {
             "name": "zendframework/zendframework1",
@@ -1577,10 +1537,10 @@
         "guilhermeblanco/zendframework1-doctrine2": 20,
         "beberlei/doctrineextensions": 20,
         "gedmo/doctrine-extensions": 20,
-        "spekkionu/zfdebug": 20,
-        "komola/bootstrap-zend-framework": 20,
         "ocramius/generated-hydrator": 20,
+        "lciolecki/zf-debug": 20,
         "lciolecki/zf-extensions-library": 20,
+        "lciolecki/bootstrap-zend-framework": 20,
         "lciolecki/cron-jobs-manager": 20
     },
     "prefer-stable": true,

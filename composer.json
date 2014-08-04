@@ -23,12 +23,12 @@
         "guilhermeblanco/zendframework1-doctrine2": "dev-master",
         "beberlei/DoctrineExtensions" : "dev-master",
         "gedmo/doctrine-extensions": "dev-master",
-        "spekkionu/zfdebug": "dev-master",
-        "komola/bootstrap-zend-framework": "dev-master",
         "mnapoli/php-di": "~4.0",
         "mnapoli/php-di-zf1": "*",
         "ocramius/generated-hydrator": "dev-master",
+        "lciolecki/zf-debug": "dev-master",
         "lciolecki/zf-extensions-library": "dev-master",
+        "lciolecki/bootstrap-zend-framework": "dev-master",
         "lciolecki/cron-jobs-manager": "dev-master"
     },
     "autoload": {
