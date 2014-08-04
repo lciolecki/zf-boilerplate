@@ -34,7 +34,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $dispatcher->setContainer($builder->build());
 
         \Zend_Controller_Front::getInstance()->setDispatcher($dispatcher);
-        \Zend_Registry::set('di', $dispatcher->getContainer());
+        \Zend_Registry::set(\System\Consts::DI_NAMESPACE, $dispatcher->getContainer());
 
         return $dispatcher->getContainer();
     }

@@ -8,8 +8,8 @@ use System\Controller\Plugin\AbstractPlugin;
  * ZF-Boilerplate module plugin
  *
  * @category System
- * @package System_Controller
- * @subpackage System_Controller_Plugin
+ * @package System\Controller
+ * @subpackage System\Controller\Plugin
  * @copyright  Copyright (c) 2013 Łukasz Ciołecki (lciolecki)
  */
 class Module extends AbstractPlugin

@@ -2,16 +2,20 @@
 
 namespace System\Controller\Plugin;
 
+use System\Traits\DependencyInjection;
+
 /**
  * ZF-Boilerplate system base zf controller plugin
  *
  * @category System
- * @package System_Controller
- * @subpackage System_Controller_Plugin
+ * @package System\Controller
+ * @subpackage System\Controller\Plugin
  * @copyright  Copyright (c) 2013 Łukasz Ciołecki (lciolecki)
  */
 class AbstractPlugin extends \Zend_Controller_Plugin_Abstract
 {
+    use DependencyInjection;
+
     /**
      * Default cache data namespace
      */
@@ -44,7 +48,7 @@ class AbstractPlugin extends \Zend_Controller_Plugin_Abstract
      */
     public function getSystem()
     {
-        return \Zend_Registry::get('di')->get('Extlib\System');
+        return $this->getDi()->get('Extlib\System');
     }
 
     /**
@@ -54,7 +58,7 @@ class AbstractPlugin extends \Zend_Controller_Plugin_Abstract
      */
     public function getCookie()
     {
-        return \Zend_Registry::get('di')->get('Extlib\System\Cookie');
+        return $this->getDi()->get('Extlib\System\Cookie');
     }
 
     /**
@@ -64,7 +68,7 @@ class AbstractPlugin extends \Zend_Controller_Plugin_Abstract
      */
     public function getSystemSession()
     {
-        return \Zend_Registry::get('di')->get('System\Session');
+        return $this->getDi()->get('System\Session');
     }
 
     /**
