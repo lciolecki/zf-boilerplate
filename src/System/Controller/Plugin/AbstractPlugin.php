@@ -18,116 +18,23 @@ class AbstractPlugin extends \Zend_Controller_Plugin_Abstract
     const CACHE_ID = 'data';
 
     /**
-     * System session namespace
-     */
-    const SESSION_NAMESPACE = 'system-session';
-
-    /**
-     * Instance of view object
-     *
-     * @var Zend_View
-     */
-    protected $view = null;
-
-    /**
-     * Instance of cache object
-     *
-     * @var \Zend_Cache_Core
-     */
-    protected $cache = null;
-
-    /**
-     * Instance of system object
-     *
-     * @var \Extlib\System
-     */
-    protected $system = null;
-
-    /**
-     * Instance of session
-     *
-     * @var \Zend_Session_Namespace
-     */
-    protected $session = null;
-
-    /**
-     * Instance of system cookie
-     *
-     * @var \Extlib\System\Cookie
-     */
-    protected $cookie = null;
-
-    /**
-     * Instance of auth user
-     *
-     * @var \stdClass
-     */
-    protected $user = null;
-
-    /**
-     * Instance of construct
-     */
-    public function __construct()
-    {
-        $this->session = new \Zend_Session_Namespace(self::SESSION_NAMESPACE);
-        $this->system = \Extlib\System::getInstance();
-        $this->cookie = new \Extlib\System\Cookie();
-
-        if (\Zend_Auth::getInstance()->hasIdentity()) {
-            $this->user = \Zend_Auth::getInstance()->getIdentity();
-        }
-    }
-
-    /**
-     * Get view
+     * Get view object
      *
      * @return \Zend_View
      */
     public function getView()
     {
-        if (null === $this->view) {
-            $this->view = \Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('view');
-        }
-
-        return $this->view;
+        return \Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('view');
     }
 
     /**
-     * Get cache
+     * Get cache data
      *
      * @return \Zend_Cache_Core
      */
     public function getCache()
     {
-        if ($this->cache === null) {
-            $this->cache = \Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('cachemanager')->getCache(self::CACHE_ID);
-        }
-
-        return $this->cache;
-    }
-
-    /**
-     * Set cache
-     *
-     * @param \Zend_Cache_Core $cache
-     * @return \System\Controller\Plugin\Locale
-     */
-    public function setCace(\Zend_Cache_Core $cache)
-    {
-        $this->cache = $cache;
-        return $this;
-    }
-
-    /**
-     * Set system object
-     *
-     * @param \Extlib\System $system
-     * @return \System\Controller\Plugin\Locale
-     */
-    public function setSystem($system)
-    {
-        $this->system = $system;
-        return $this;
+        return \Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('cachemanager')->getCache(self::CACHE_ID);
     }
 
     /**
@@ -137,72 +44,40 @@ class AbstractPlugin extends \Zend_Controller_Plugin_Abstract
      */
     public function getSystem()
     {
-        return $this->system;
+        return \Zend_Registry::get('di')->get('Extlib\System');
     }
 
     /**
-     * Set Cookie object
-     *
-     * @param \Extlib\System\Cookie $cookie
-     * @return \System\Controller\Plugin\Locale
-     */
-    public function setCookie(\Extlib\System\Cookie $cookie)
-    {
-        $this->cookie = $cookie;
-        return $this;
-    }
-
-    /**
-     * Get Cookieobject
+     * Get system cookie object
      *
      * @return \Extlib\System\Cookie
      */
     public function getCookie()
     {
-        return $this->cookie;
+        return \Zend_Registry::get('di')->get('Extlib\System\Cookie');
     }
 
     /**
-     * Set session object
-     *
-     * @param \Zend_Session_Namespace $session
-     * @return \System\Controller\Plugin\Locale
-     */
-    public function setSession(\Zend_Session_Namespace $session)
-    {
-        $this->session = $session;
-        return $this;
-    }
-
-    /**
-     * Get session object
+     * Get system session object
      *
      * @return \Zend_Session_Namespace
      */
-    public function getSession()
+    public function getSystemSession()
     {
-        return $this->session;
+        return \Zend_Registry::get('di')->get('System\Session');
     }
 
     /**
-     * Set auth user
-     *
-     * @param \stdClass $user
-     * @return \System\Controller\Plugin\Locale
-     */
-    public function setUser(\stdClass $user)
-    {
-        $this->user = $user;
-        return $this;
-    }
-
-    /**
-     * Get auth user
+     * Get auth user object
      *
      * @return \stdClass
      */
-    public function getUser()
+    public function getAuthUser()
     {
-        return $this->user;
+        if (\Zend_Auth::getInstance()->hasIdentity()) {
+            return \Zend_Auth::getInstance()->getIdentity();
+        }
+
+        return null;
     }
 } 

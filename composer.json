@@ -31,12 +31,6 @@
         "lciolecki/zf-extensions-library": "dev-master",
         "lciolecki/cron-jobs-manager": "dev-master"
     },
-    "require-dev": {
-        "phpunit/phpunit": "dev-master",
-        "phploc/phploc": "dev-master",
-        "phpmd/phpmd": "dev-master",
-        "sebastian/phpcpd": "dev-master"
-    },
     "autoload": {
         "psr-0": {
             "System\\": "src/"

@@ -1,11 +1,17 @@
 <?php
 
 use \Doctrine\Common\Cache\ArrayCache,
+    \Doctrine\Common\Cache\MemcachedCache,
     \DI\Bridge\ZendFramework1\Dispatcher,
     \DI\ContainerBuilder;
 
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
+    /**
+     * Initialization Dependency Injection
+     *
+     * @return \DI\ContainerInterface
+     */
     protected function _initDiContainer()
     {
         $builder = new ContainerBuilder();
@@ -28,6 +34,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $dispatcher->setContainer($builder->build());
 
         \Zend_Controller_Front::getInstance()->setDispatcher($dispatcher);
+        \Zend_Registry::set('di', $dispatcher->getContainer());
+
+        return $dispatcher->getContainer();
     }
 }
 
