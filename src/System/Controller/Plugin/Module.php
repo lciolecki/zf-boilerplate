@@ -45,18 +45,23 @@ class Module extends AbstractPlugin
         $frontController = \Zend_Controller_Front::getInstance();
         $bootstrap = $frontController->getParam('bootstrap');
         $application = $bootstrap->getApplication();
-        $path = $this->modules[$module];
+        $path = dirname($this->modules[$module]);
         $class = ucfirst($module) . '_Bootstrap';
 
-        if (\Zend_Loader::loadFile('Bootstrap.php', dirname($path)) && class_exists($class)) {
+        if (\Zend_Loader::loadFile('Bootstrap.php', $path) && class_exists($class)) {
             $bootstrap = new $class($application);
             $bootstrap->bootstrap();
 
             $frontController->setParam('module_bootstrap', $bootstrap);
         }
 
-        $errorPlugin = $frontController->getPlugin('Zend_Controller_Plugin_ErrorHandler');
-        $errorPlugin->setErrorHandlerModule($request->getModuleName());
+        $layoutsDir = $path . DIRECTORY_SEPARATOR . 'layouts';
+        if (is_dir($layoutsDir)) {
+            \Zend_Layout::getMvcInstance()->setLayoutPath($layoutsDir);
+        }
+
+//        $errorPlugin = $frontController->getPlugin('Zend_Controller_Plugin_ErrorHandler');
+//        $errorPlugin->setErrorHandlerModule($request->getModuleName());
 
         return parent::routeShutdown($request);
     }

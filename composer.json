@@ -28,7 +28,7 @@
         "ocramius/generated-hydrator": "dev-master",
         "lciolecki/zf-debug": "dev-master",
         "lciolecki/zf-extensions-library": "dev-master",
-        "lciolecki/bootstrap-zend-framework": "dev-master",
+        "lciolecki/zf-twitter-bootstrap": "dev-master",
         "lciolecki/cron-jobs-manager": "dev-master"
     },
     "autoload": {

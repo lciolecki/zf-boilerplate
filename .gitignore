@@ -1,3 +1,5 @@
 vendor/*
+data/*
+public/bower_components
 .idea/*
-data
+

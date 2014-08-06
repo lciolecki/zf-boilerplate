@@ -1,0 +1,57 @@
+<?php
+
+use System\Traits\DependencyInjection;
+
+class Admin_Form_Login extends Twitter_Form
+{
+    use DependencyInjection;
+
+    public function init()
+    {
+        $this->setAttrib('inline', true);
+
+        $this->setMethod('post');
+        $this->addAttribs(array(
+            'class' => 'form-signin',
+            'role' => 'form'
+        ));
+
+        $this->addElement('text', 'email', array(
+            'required' => true,
+            'value' => $this->getCookie()->get('email'),
+            'filters' => array('StringTrim', array('StringToLower', array('UTF-8'))),
+            'validators' => array(),
+            'attribs' => array(
+                'class' => 'form-control',
+                'placeholder' => 'Email address'
+            )
+        ));
+
+        $this->addElement('password', 'password', array(
+            'required' => true,
+            'validators' => array(),
+            'attribs' => array(
+                'class' => 'form-control',
+                'placeholder' => 'Password'
+            ),
+        ));
+
+//        $this->addElement('checkbox', 'remember', array());
+
+        $this->addElement('button', 'submit', array(
+            'label' => 'Sign In',
+            'type' => 'submit',
+            'class' => 'btn-lg btn-primary btn-block',
+        ));
+    }
+
+    /**
+     * Get system cookie
+     *
+     * @return \Extlib\System\Cookie
+     */
+    public function getCookie()
+    {
+        return $this->getDi()->get('Extlib\System\Cookie');
+    }
+}

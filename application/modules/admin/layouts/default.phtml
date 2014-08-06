@@ -1,0 +1,38 @@
+<?php echo $this->doctype() . PHP_EOL; ?>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php echo 'lang="'. $this->language .'"'; ?>> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" <?php echo 'lang="'. $this->language .'"'; ?>> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" <?php echo 'lang="'. $this->language .'"'; ?>> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" <?php echo 'lang="'. $this->language .'"'; ?>> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php
+    echo $this->headMeta() . PHP_EOL;
+    echo $this->headLink()
+              ->appendStylesheet('//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+              ->appendStylesheet('//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css')
+              ->appendStylesheet('/style/signin.css') . PHP_EOL;
+
+    echo $this->headScript()
+              ->appendFile('//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')
+              ->appendFile('//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js') . PHP_EOL;
+
+    echo $this->headStyle() . PHP_EOL;
+    echo $this->headTitle();
+?>
+</head>
+<body>
+<header>
+
+</header>
+
+<div role="main" class="container">
+    <?php echo $this->layout()->content; ?>
+</div>
+
+<footer>
+</footer>
+
+</body>
+</html>

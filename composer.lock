@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "30e7bb5f4f771a1505135279bdcba1f7",
+    "hash": "b9ef14ff21bdd3e48e5e539269922ac4",
     "packages": [
         {
             "name": "beberlei/DoctrineExtensions",
@@ -718,43 +718,6 @@
             "time": "2014-03-03 02:01:23"
         },
         {
-            "name": "lciolecki/bootstrap-zend-framework",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/lciolecki/Bootstrap-Zend-Framework.git",
-                "reference": "6eb4d7a806c059f50ed4fa6cbf2b56c5f04ed725"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lciolecki/Bootstrap-Zend-Framework/zipball/6eb4d7a806c059f50ed4fa6cbf2b56c5f04ed725",
-                "reference": "6eb4d7a806c059f50ed4fa6cbf2b56c5f04ed725",
-                "shasum": ""
-            },
-            "require": {
-                "zendframework/zendframework1": "1.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Twitter_": "library"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian Hoitz",
-                    "email": "hoitz@komola.de",
-                    "homepage": "http://komola.de"
-                }
-            ],
-            "description": "Twitter bootstrap for ZF1",
-            "time": "2014-08-04 12:50:05"
-        },
-        {
             "name": "lciolecki/cron-jobs-manager",
             "version": "dev-master",
             "source": {
@@ -829,12 +792,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lciolecki/zf-debug.git",
-                "reference": "f19bb5d3f0e81ba0d13cd090ecd1125a39f3de0a"
+                "reference": "bfcbcd63aa75f34b39a404e5d7a0b159e27f39e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lciolecki/zf-debug/zipball/f19bb5d3f0e81ba0d13cd090ecd1125a39f3de0a",
-                "reference": "f19bb5d3f0e81ba0d13cd090ecd1125a39f3de0a",
+                "url": "https://api.github.com/repos/lciolecki/zf-debug/zipball/bfcbcd63aa75f34b39a404e5d7a0b159e27f39e1",
+                "reference": "bfcbcd63aa75f34b39a404e5d7a0b159e27f39e1",
                 "shasum": ""
             },
             "require": {
@@ -860,7 +823,7 @@
                 "doctrine2",
                 "php"
             ],
-            "time": "2014-08-04 22:03:23"
+            "time": "2014-08-06 12:09:28"
         },
         {
             "name": "lciolecki/zf-extensions-library",
@@ -901,6 +864,43 @@
                 "php"
             ],
             "time": "2014-04-15 12:11:39"
+        },
+        {
+            "name": "lciolecki/zf-twitter-bootstrap",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lciolecki/zf-twitter-bootstrap.git",
+                "reference": "a84108b845e237adb4ff9471bc7218aec7937ecb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lciolecki/zf-twitter-bootstrap/zipball/a84108b845e237adb4ff9471bc7218aec7937ecb",
+                "reference": "a84108b845e237adb4ff9471bc7218aec7937ecb",
+                "shasum": ""
+            },
+            "require": {
+                "zendframework/zendframework1": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Twitter_": "library"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Hoitz",
+                    "email": "hoitz@komola.de",
+                    "homepage": "http://komola.de"
+                }
+            ],
+            "description": "Twitter bootstrap for ZF1",
+            "time": "2014-08-06 13:30:44"
         },
         {
             "name": "mnapoli/php-di",
@@ -1217,27 +1217,26 @@
         },
         {
             "name": "ocramius/proxy-manager",
-            "version": "0.5.0",
+            "version": "0.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ocramius/ProxyManager.git",
-                "reference": "3b3b7101b1eea62afe039db50faee0d3a9e3e330"
+                "reference": "eaaf10f9a24ffd79a3e388809f6d61f229e261bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/ProxyManager/zipball/3b3b7101b1eea62afe039db50faee0d3a9e3e330",
-                "reference": "3b3b7101b1eea62afe039db50faee0d3a9e3e330",
+                "url": "https://api.github.com/repos/Ocramius/ProxyManager/zipball/eaaf10f9a24ffd79a3e388809f6d61f229e261bd",
+                "reference": "eaaf10f9a24ffd79a3e388809f6d61f229e261bd",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
-                "zendframework/zend-code": "2.*"
+                "zendframework/zend-code": ">2.2.5,<3.0"
             },
             "require-dev": {
-                "phpmd/phpmd": "1.4.*",
-                "phpunit/phpunit": ">=3.7",
-                "satooshi/php-coveralls": "~0.6",
-                "squizlabs/php_codesniffer": "1.4.*"
+                "ext-phar": "*",
+                "phpunit/phpunit": "~3.7",
+                "squizlabs/php_codesniffer": "1.5.*"
             },
             "suggest": {
                 "ocramius/generated-hydrator": "To have very fast object to array to object conversion for ghost objects",
@@ -1249,7 +1248,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.5.x-dev"
+                    "dev-master": "0.6.x-dev"
                 }
             },
             "autoload": {
@@ -1278,21 +1277,21 @@
                 "proxy pattern",
                 "service proxies"
             ],
-            "time": "2013-11-30 15:00:46"
+            "time": "2014-03-12 14:00:19"
         },
         {
             "name": "symfony/console",
-            "version": "v2.5.2",
+            "version": "v2.5.3",
             "target-dir": "Symfony/Component/Console",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "386fa63407805959bd2c5fe540294721ad4224c8"
+                "reference": "cd2d1e4bac2206b337326b0140ff475fe9ad5f63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/386fa63407805959bd2c5fe540294721ad4224c8",
-                "reference": "386fa63407805959bd2c5fe540294721ad4224c8",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/cd2d1e4bac2206b337326b0140ff475fe9ad5f63",
+                "reference": "cd2d1e4bac2206b337326b0140ff475fe9ad5f63",
                 "shasum": ""
             },
             "require": {
@@ -1323,33 +1322,31 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
                     "name": "Symfony Community",
                     "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-15 14:15:12"
+            "time": "2014-08-05 09:00:40"
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.5.2",
+            "version": "v2.5.3",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "f868ecdbcc0276b6158dfbf08b9e98ce07f014e1"
+                "reference": "5a75366ae9ca8b4792cd0083e4ca4dff9fe96f1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/f868ecdbcc0276b6158dfbf08b9e98ce07f014e1",
-                "reference": "f868ecdbcc0276b6158dfbf08b9e98ce07f014e1",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/5a75366ae9ca8b4792cd0083e4ca4dff9fe96f1f",
+                "reference": "5a75366ae9ca8b4792cd0083e4ca4dff9fe96f1f",
                 "shasum": ""
             },
             "require": {
@@ -1372,45 +1369,52 @@
             ],
             "authors": [
                 {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
                     "name": "Symfony Community",
                     "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
                 }
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2014-07-09 09:05:48"
+            "time": "2014-08-05 09:00:40"
         },
         {
             "name": "zendframework/zend-code",
-            "version": "2.0.3",
+            "version": "2.3.0",
             "target-dir": "Zend/Code",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/Component_ZendCode.git",
-                "reference": "a2692a33e8daee158b8348da40e57777f4ac7a87"
+                "reference": "7eb108341ff6c9ec240764a11270f2d12934b733"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/Component_ZendCode/zipball/a2692a33e8daee158b8348da40e57777f4ac7a87",
-                "reference": "a2692a33e8daee158b8348da40e57777f4ac7a87",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendCode/zipball/7eb108341ff6c9ec240764a11270f2d12934b733",
+                "reference": "7eb108341ff6c9ec240764a11270f2d12934b733",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.23",
+                "zendframework/zend-eventmanager": "self.version"
             },
             "require-dev": {
-                "doctrine/common": ">=2.1"
+                "doctrine/common": ">=2.1",
+                "zendframework/zend-stdlib": "self.version"
             },
             "suggest": {
-                "doctrine/common": "Doctrine\\Common >=2.1 for annotation features"
+                "doctrine/common": "Doctrine\\Common >=2.1 for annotation features",
+                "zendframework/zend-stdlib": "Zend\\Stdlib component"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev",
+                    "dev-develop": "2.3-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Zend\\Code\\": ""
@@ -1425,21 +1429,62 @@
                 "code",
                 "zf2"
             ],
-            "time": "2012-10-17 12:16:29"
+            "time": "2014-03-14 16:20:47"
+        },
+        {
+            "name": "zendframework/zend-eventmanager",
+            "version": "2.3.0",
+            "target-dir": "Zend/EventManager",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/Component_ZendEventManager.git",
+                "reference": "048164ee81854942667ffdda3030ce06caa79bb5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendEventManager/zipball/048164ee81854942667ffdda3030ce06caa79bb5",
+                "reference": "048164ee81854942667ffdda3030ce06caa79bb5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.23",
+                "zendframework/zend-stdlib": "self.version"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev",
+                    "dev-develop": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Zend\\EventManager\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "keywords": [
+                "eventmanager",
+                "zf2"
+            ],
+            "time": "2014-03-14 16:21:05"
         },
         {
             "name": "zendframework/zend-stdlib",
-            "version": "2.3.1",
+            "version": "2.3.0",
             "target-dir": "Zend/Stdlib",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/Component_ZendStdlib.git",
-                "reference": "c1f4830018b5d4f034d32fa01a9e17ea176f56f6"
+                "reference": "d1c481b8a43f2f079b16d3567960ba539e9dacaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/Component_ZendStdlib/zipball/c1f4830018b5d4f034d32fa01a9e17ea176f56f6",
-                "reference": "c1f4830018b5d4f034d32fa01a9e17ea176f56f6",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendStdlib/zipball/d1c481b8a43f2f079b16d3567960ba539e9dacaa",
+                "reference": "d1c481b8a43f2f079b16d3567960ba539e9dacaa",
                 "shasum": ""
             },
             "require": {
@@ -1458,8 +1503,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.3-dev",
-                    "dev-develop": "2.4-dev"
+                    "dev-master": "2.2-dev",
+                    "dev-develop": "2.3-dev"
                 }
             },
             "autoload": {
@@ -1475,7 +1520,7 @@
                 "stdlib",
                 "zf2"
             ],
-            "time": "2014-04-15 15:28:48"
+            "time": "2014-03-14 16:22:22"
         },
         {
             "name": "zendframework/zendframework1",
@@ -1540,7 +1585,7 @@
         "ocramius/generated-hydrator": 20,
         "lciolecki/zf-debug": 20,
         "lciolecki/zf-extensions-library": 20,
-        "lciolecki/bootstrap-zend-framework": 20,
+        "lciolecki/zf-twitter-bootstrap": 20,
         "lciolecki/cron-jobs-manager": 20
     },
     "prefer-stable": true,

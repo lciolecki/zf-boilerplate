@@ -84,7 +84,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                 'plugins' => array(
                     'Variables',
                     'ZFDebug_Controller_Plugin_Debug_Plugin_Doctrine2' => array(
-                        'entityManagers' => array(Zend_Registry::get('em')),
+                        'entityManagers' => array($em),
                     ),
                     'Cache' => array('backend' => $cacheBackend),
                     'File' => array('basePath' => APPLICATION_PATH . '/application'),
@@ -95,7 +95,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                 )
             );
 
-            Zend_Controller_Front::getInstance()->registerPlugin(new ZFDebug_Controller_Plugin_Debug($options));
+            //Zend_Controller_Front::getInstance()->registerPlugin(new ZFDebug_Controller_Plugin_Debug($options));
         }
     }
 }
