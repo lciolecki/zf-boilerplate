@@ -1,5 +1,6 @@
 vendor/*
 data/*
+data
 public/bower_components
 .idea/*
 

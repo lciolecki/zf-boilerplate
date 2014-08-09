@@ -8,7 +8,7 @@ class Admin_Form_Login extends Twitter_Form
 
     public function init()
     {
-        $this->setAttrib('inline', true);
+        //$this->setType(self::FORM_TYPE_HORIZONTAL);
 
         $this->setMethod('post');
         $this->addAttribs(array(
@@ -17,6 +17,7 @@ class Admin_Form_Login extends Twitter_Form
         ));
 
         $this->addElement('text', 'email', array(
+            //'label' => 'User login / email',
             'required' => true,
             'value' => $this->getCookie()->get('email'),
             'filters' => array('StringTrim', array('StringToLower', array('UTF-8'))),
@@ -28,6 +29,7 @@ class Admin_Form_Login extends Twitter_Form
         ));
 
         $this->addElement('password', 'password', array(
+            //'label' => 'User login / email',
             'required' => true,
             'validators' => array(),
             'attribs' => array(
@@ -36,7 +38,7 @@ class Admin_Form_Login extends Twitter_Form
             ),
         ));
 
-//        $this->addElement('checkbox', 'remember', array());
+        $this->addElement('checkbox', 'remember', array('label' => 'Remember me'));
 
         $this->addElement('button', 'submit', array(
             'label' => 'Sign In',
