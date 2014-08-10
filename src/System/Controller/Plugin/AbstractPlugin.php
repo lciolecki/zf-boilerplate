@@ -10,7 +10,7 @@ use System\Traits\DependencyInjection;
  * @category System
  * @package System\Controller
  * @subpackage System\Controller\Plugin
- * @copyright  Copyright (c) 2013 Łukasz Ciołecki (lciolecki)
+ * @copyright  Copyright (c) 2014 Łukasz Ciołecki (lciolecki)
  */
 class AbstractPlugin extends \Zend_Controller_Plugin_Abstract
 {
@@ -78,10 +78,6 @@ class AbstractPlugin extends \Zend_Controller_Plugin_Abstract
      */
     public function getAuthUser()
     {
-        if (\Zend_Auth::getInstance()->hasIdentity()) {
-            return \Zend_Auth::getInstance()->getIdentity();
-        }
-
-        return null;
+        return $this->getDi()->get('System\AuthUser');
     }
 } 

@@ -1,18 +1,19 @@
 <?php
 
-class Admin_LoginController extends Zend_Controller_Action
-{
+use System\Controller\Action;
 
+class Admin_LoginController extends Action
+{
     public function init()
     {
-        /* Initialize action controller here */
+        if ($this->getAuthUser()) {
+            $this->redirect($this->url(array('module' => 'admin'), 'default', true));
+        }
     }
 
     public function indexAction()
     {
         $form = new Admin_Form_Login();
-
-
         if ($this->_request->isPost() && $form->isValid($this->_request->getPost())) {
 
         }

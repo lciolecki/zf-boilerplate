@@ -10,7 +10,7 @@ use System\Controller\Plugin\AbstractPlugin;
  * @category System
  * @package System\Controller
  * @subpackage System\Controller\Plugin
- * @copyright  Copyright (c) 2013 Łukasz Ciołecki (lciolecki)
+ * @copyright  Copyright (c) 2014 Łukasz Ciołecki (lciolecki)
  */
 class Locale extends AbstractPlugin
 {
@@ -18,7 +18,7 @@ class Locale extends AbstractPlugin
 
     /**
      * (non-PHPdoc)
-     * @see Zend_Controller_Plugin_Abstract::routeShutdown()
+     * @see Zend_Controller_Plugin_Abstract::routeStartup()
      */
     public function routeStartup(\Zend_Controller_Request_Abstract $request)
     {

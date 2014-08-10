@@ -10,7 +10,7 @@ use System\Controller\Plugin\AbstractPlugin;
  * @category System
  * @package System\Controller
  * @subpackage System\Controller\Plugin
- * @copyright  Copyright (c) 2013 Łukasz Ciołecki (lciolecki)
+ * @copyright  Copyright (c) 2014 Łukasz Ciołecki (lciolecki)
  */
 class Module extends AbstractPlugin
 {
@@ -22,7 +22,7 @@ class Module extends AbstractPlugin
     protected $modules;
 
     /**
-     * __construct() - instance of construct
+     * Instance of construct
      */
     public function __construct()
     {
@@ -30,9 +30,8 @@ class Module extends AbstractPlugin
     }
 
     /**
-     * @param \Zend_Controller_Request_Abstract $request
-     * @return mixed
-     * @throws \Zend_Controller_Dispatcher_Exception
+     * (non-PHPdoc)
+     * @see Zend_Controller_Plugin_Abstract::routeShutdown()
      */
     public function routeShutdown(\Zend_Controller_Request_Abstract $request)
     {
@@ -88,7 +87,7 @@ class Module extends AbstractPlugin
             }
         }
 
-        $this->getView()->addHelperPath(PROJECT_PATH . '/modules/' . $request->getModuleName() . '/views/helpers', 'Simplepanel\View\Helper');
+        $this->getView()->addHelperPath(PROJECT_PATH . '/modules/' . $request->getModuleName() . '/views/helpers', 'System\View\Helper');
         $this->getView()->addScriptPath(PROJECT_PATH . '/modules/' . $request->getModuleName() . '/views/scripts');
     }
 
@@ -137,7 +136,7 @@ class Module extends AbstractPlugin
             )
         ));
 
-        $this->getView()->addHelperPath(APPLICATION_PATH . '/modules/' . $module . '/views/helpers', 'Simplepanel\View\Helper');
+        $this->getView()->addHelperPath(APPLICATION_PATH . '/modules/' . $module . '/views/helpers', 'System\View\Helper');
         $this->getView()->addScriptPath(APPLICATION_PATH . '/modules/' . $module . '/views/scripts');
     }
 }

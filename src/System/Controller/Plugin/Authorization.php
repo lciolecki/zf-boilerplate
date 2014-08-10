@@ -5,12 +5,12 @@ namespace System\Controller\Plugin;
 use System\Controller\Plugin\AbstractPlugin;
 
 /**
- * ZF-Boilerplate module for checkout auhorization
+ * ZF-Boilerplate module for check auhorization
  *
  * @category System
  * @package System\Controller
  * @subpackage System\Controller\Plugin
- * @copyright  Copyright (c) 2013 Łukasz Ciołecki (lciolecki)
+ * @copyright Copyright (c) 2014 Łukasz Ciołecki (lciolecki)
  */
 class Authorization extends AbstractPlugin
 {

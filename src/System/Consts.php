@@ -6,7 +6,7 @@ namespace System;
  * ZF-Boilerplate const definitions
  *
  * @category System
- * @copyright  Copyright (c) 2013 Łukasz Ciołecki (lciolecki)
+ * @copyright  Copyright (c) 2014 Łukasz Ciołecki (lciolecki)
  */
 final class Consts
 {
