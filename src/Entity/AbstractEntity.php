@@ -5,7 +5,7 @@ use System\Traits\Doctrine,
     System\Traits\DependencyInjection;
 
 /**
- * ZF-Boilerplate bae Entity class
+ * ZF-Boilerplate base Entity class
  *
  * @category Entity
  * @copyright  Copyright (c) 2014 Łukasz Ciołecki (lciolecki)
