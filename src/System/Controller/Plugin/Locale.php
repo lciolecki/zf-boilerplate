@@ -2,23 +2,21 @@
 
 namespace System\Controller\Plugin;
 
-use System\Controller\Plugin\AbstractPlugin;
-
 /**
  * ZF-Boilerplate module for checkout localisation
  *
  * @category System
  * @package System\Controller
  * @subpackage System\Controller\Plugin
- * @copyright  Copyright (c) 2014 Łukasz Ciołecki (lciolecki)
+ * @copyright Copyright (c) 2014 Łukasz Ciołecki (lciolecki)
  */
 class Locale extends AbstractPlugin
 {
     const DEFAULT_LANGUAGE = 'pl_PL';
 
     /**
-     * (non-PHPdoc)
-     * @see Zend_Controller_Plugin_Abstract::routeStartup()
+     * @see \Zend_Controller_Plugin_Abstract::preDispatch()
+     * @param \Zend_Controller_Request_Abstract $request
      */
     public function routeStartup(\Zend_Controller_Request_Abstract $request)
     {

@@ -2,8 +2,6 @@
 
 namespace System\Controller\Plugin;
 
-use System\Controller\Plugin\AbstractPlugin;
-
 /**
  * ZF-Boilerplate module plugin
  *
@@ -30,8 +28,8 @@ class Module extends AbstractPlugin
     }
 
     /**
-     * (non-PHPdoc)
-     * @see Zend_Controller_Plugin_Abstract::routeShutdown()
+     * @see \Zend_Controller_Plugin_Abstract::routeShutdown()
+     * @param \Zend_Controller_Request_Abstract $request
      */
     public function routeShutdown(\Zend_Controller_Request_Abstract $request)
     {
@@ -66,7 +64,6 @@ class Module extends AbstractPlugin
     }
 
     /**
-     * (non-PHPdoc)
      * @see \Zend_Controller_Plugin_Abstract::preDispatch()
      * @param \Zend_Controller_Request_Abstract $request
      */

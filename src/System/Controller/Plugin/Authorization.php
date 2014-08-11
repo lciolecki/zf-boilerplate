@@ -2,8 +2,6 @@
 
 namespace System\Controller\Plugin;
 
-use System\Controller\Plugin\AbstractPlugin;
-
 /**
  * ZF-Boilerplate module for check auhorization
  *
@@ -17,7 +15,7 @@ class Authorization extends AbstractPlugin
     /**
      * Instance of Zend_Controller_Action_Helper_Redirector
      *
-     * @var Zend_Controller_Action_Helper_Redirector
+     * @var \Zend_Controller_Action_Helper_Redirector
      */
     protected $redirector = null;
 
@@ -30,8 +28,8 @@ class Authorization extends AbstractPlugin
     }
 
     /**
-     * (non-PHPdoc)
-     * @see Zend_Controller_Plugin_Abstract::preDispatch()
+     * @see \Zend_Controller_Plugin_Abstract::preDispatch()
+     * @param \Zend_Controller_Request_Abstract $request
      */
     public function preDispatch(\Zend_Controller_Request_Abstract $request)
     {
