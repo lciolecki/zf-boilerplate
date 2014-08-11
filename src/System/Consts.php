@@ -11,4 +11,7 @@ namespace System;
 final class Consts
 {
     const DI_NAMESPACE = 'dependency-injection';
+    const DEFAULT_ENTITY_MANAGER = 'default';
+    const DOCTRINE = 'doctrine';
+    const CACHE_ID_LONG = 'data';
 }

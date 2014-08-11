@@ -2,10 +2,11 @@
 
 namespace System\Controller;
 
-use System\Traits\DependencyInjection;
+use System\Traits\DependencyInjection,
+    System\Traits\Doctrine;
 
 /**
- * ZF-Boilerplate module for checkout auhorization
+ * ZF-Boilerplate base action controller
  *
  * @category System
  * @package System\Controller
@@ -13,7 +14,8 @@ use System\Traits\DependencyInjection;
  */
 class Action extends \Zend_Controller_Action
 {
-    use DependencyInjection;
+    use DependencyInjection,
+        Doctrine;
 
     /**
      * Instance of system

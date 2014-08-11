@@ -2,7 +2,9 @@
 
 namespace System\Controller\Plugin;
 
-use System\Traits\DependencyInjection;
+use System\Traits\DependencyInjection,
+    System\Traits\Doctrine,
+    System\Consts;
 
 /**
  * ZF-Boilerplate system base zf controller plugin
@@ -10,16 +12,12 @@ use System\Traits\DependencyInjection;
  * @category System
  * @package System\Controller
  * @subpackage System\Controller\Plugin
- * @copyright  Copyright (c) 2014 Łukasz Ciołecki (lciolecki)
+ * @copyright Copyright (c) 2014 Łukasz Ciołecki (lciolecki)
  */
 class AbstractPlugin extends \Zend_Controller_Plugin_Abstract
 {
-    use DependencyInjection;
-
-    /**
-     * Default cache data namespace
-     */
-    const CACHE_ID = 'data';
+    use DependencyInjection,
+        Doctrine;
 
     /**
      * Get view object
@@ -38,7 +36,7 @@ class AbstractPlugin extends \Zend_Controller_Plugin_Abstract
      */
     public function getCache()
     {
-        return \Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('cachemanager')->getCache(self::CACHE_ID);
+        return \Zend_Controller_Front::getInstance()->getParam('bootstrap')->getResource('cachemanager')->getCache(Consts::CACHE_ID_LONG);
     }
 
     /**
