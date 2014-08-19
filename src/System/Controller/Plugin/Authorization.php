@@ -12,6 +12,9 @@ namespace System\Controller\Plugin;
  */
 class Authorization extends AbstractPlugin
 {
+    const USER_GUEST = 'guest';
+    const USER_ADMIN = 'admin';
+
     /**
      * Instance of Zend_Controller_Action_Helper_Redirector
      *
@@ -30,26 +33,40 @@ class Authorization extends AbstractPlugin
     /**
      * @see \Zend_Controller_Plugin_Abstract::preDispatch()
      * @param \Zend_Controller_Request_Abstract $request
+     * @return void
      */
     public function preDispatch(\Zend_Controller_Request_Abstract $request)
     {
-        $role = 'guest';
-        if ($this->getAuthUser()) {
-            $role = 'user';
-        }
-
         $acl = $this->getAcl();
+        $role = $this->getUserRole();
+
         if (!$acl->has($request->getModuleName()) && !$this->getAuthUser()) {
-            return $this->redirector->gotoUrl($this->getView()->url(array('module' => 'admin', 'controller' => 'login', 'action' => 'index'), 'default', true));
+            $this->getSystemSession()->goto = $request->getParams();
+            return $this->redirector->gotoUrl($this->getView()->url(array(), 'login', true));
         } elseif (!$acl->has($request->getModuleName())) {
             throw new \Zend_Controller_Action_Exception(null, 404);
         }
 
-
         if (!$acl->isAllowed($role, $request->getModuleName(), $request->getControllerName())) {
             $this->getSystemSession()->goto = $request->getParams();
-            return $this->redirector->gotoUrl($this->getView()->url(array('module' => 'admin', 'controller' => 'login', 'action' => 'index'), 'default', true));
+            return $this->redirector->gotoUrl($this->getView()->url(array(), 'login', true));
         }
+
+        return parent::preDispatch($request);
+    }
+
+    /**
+     * Get user role name
+     *
+     * @return string
+     */
+    protected function getUserRole()
+    {
+        if ($this->getAuthUser() === null) {
+            return self::USER_GUEST;
+        }
+
+        return $this->getAuthUser()->role;
     }
 
     /**
@@ -61,13 +78,16 @@ class Authorization extends AbstractPlugin
     {
         $acl = new \Zend_Acl();
 
-        $acl->addRole(new \Zend_Acl_Role('guest'));
-        $acl->addRole(new \Zend_Acl_Role('user'), 'guest');
+        $acl->addRole(new \Zend_Acl_Role(self::USER_GUEST));
+        $acl->addRole(new \Zend_Acl_Role(self::USER_ADMIN), self::USER_GUEST);
+
         $acl->addResource(new \Zend_Acl_Resource('default'));
         $acl->addResource(new \Zend_Acl_Resource('admin'));
-        $acl->allow('guest', 'default');
-        $acl->allow('guest', 'admin', 'login');
-        $acl->allow('user', 'admin');
+
+        $acl->allow(self::USER_GUEST, 'default');
+        $acl->allow(self::USER_GUEST, 'admin', 'login');
+
+        $acl->allow(self::USER_ADMIN, 'admin');
 
         return $acl;
     }

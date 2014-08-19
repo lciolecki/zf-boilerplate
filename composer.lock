@@ -831,12 +831,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lciolecki/zf-extensions-library.git",
-                "reference": "a87d9c08b2f7b6475a58220221050653240f6833"
+                "reference": "c3b155c86cbe5372d3afe4c51187d84c41679018"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lciolecki/zf-extensions-library/zipball/a87d9c08b2f7b6475a58220221050653240f6833",
-                "reference": "a87d9c08b2f7b6475a58220221050653240f6833",
+                "url": "https://api.github.com/repos/lciolecki/zf-extensions-library/zipball/c3b155c86cbe5372d3afe4c51187d84c41679018",
+                "reference": "c3b155c86cbe5372d3afe4c51187d84c41679018",
                 "shasum": ""
             },
             "require": {
@@ -863,7 +863,7 @@
                 "extlib",
                 "php"
             ],
-            "time": "2014-04-15 12:11:39"
+            "time": "2014-08-13 11:27:31"
         },
         {
             "name": "lciolecki/zf-twitter-bootstrap",
@@ -909,16 +909,16 @@
         },
         {
             "name": "mnapoli/php-di",
-            "version": "4.2.2",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mnapoli/PHP-DI.git",
-                "reference": "9e6029df2a8a0cc8202b7a2dd9f5191b221198c1"
+                "reference": "99939b3da11d74cb5ddec7ee78ef7c989734182b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mnapoli/PHP-DI/zipball/9e6029df2a8a0cc8202b7a2dd9f5191b221198c1",
-                "reference": "9e6029df2a8a0cc8202b7a2dd9f5191b221198c1",
+                "url": "https://api.github.com/repos/mnapoli/PHP-DI/zipball/99939b3da11d74cb5ddec7ee78ef7c989734182b",
+                "reference": "99939b3da11d74cb5ddec7ee78ef7c989734182b",
                 "shasum": ""
             },
             "require": {
@@ -955,7 +955,7 @@
                 "dependency injection",
                 "di"
             ],
-            "time": "2014-08-08 14:50:28"
+            "time": "2014-08-12 16:16:06"
         },
         {
             "name": "mnapoli/php-di-zf1",

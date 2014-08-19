@@ -58,7 +58,7 @@ class Locale extends AbstractPlugin
         \Zend_Registry::set('Validate_Translate', $validateTranslator);
 
         $this->getView()->language = $locale->getLanguage();
-        $this->getView()->headLink(array('rel' => 'alternate', 'hreflang' => $locale->getLanguage(), 'href' => $this->getSystem()->getDomain()->getAddress()), 'SET');
+        //$this->getView()->headLink(array('rel' => 'alternate', 'hreflang' => $locale->getLanguage(), 'href' => $this->getSystem()->getDomain()->getAddress()), 'SET');
 
         parent::routeStartup($request);
     }

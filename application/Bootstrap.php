@@ -1,7 +1,7 @@
 <?php
 
 use \Doctrine\Common\Cache\ArrayCache,
-    \Doctrine\Common\Cache\MemcachedCache,
+    \Doctrine\Common\Cache\FilesystemCache,
     \DI\Bridge\ZendFramework1\Dispatcher,
     \DI\ContainerBuilder;
 
@@ -33,10 +33,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $builder->addDefinitions(APPLICATION_PATH . '/configs/config.' . APPLICATION_ENV . '.php');
 
         if (APPLICATION_ENV === 'production') {
-//            $cache = new MemcachedCache();
-//            $memcached = new Memcached();
-//            $memcached->addServer('localhost', 11211);
-//            $cache->setMemcached($memcached);
+            $cache = new FilesystemCache(PROJECT_PATH . '/data/cache');
+            $cache->setNamespace('DiConfigs');
         } else {
             $cache = new ArrayCache();
         }
@@ -56,7 +54,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     /**
      * Initialization logger
      *
-     * @return Zend_Log
+     * @return \Zend_Log
      */
     protected function _initLogger()
     {
@@ -95,7 +93,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                 )
             );
 
-            //Zend_Controller_Front::getInstance()->registerPlugin(new ZFDebug_Controller_Plugin_Debug($options));
+            Zend_Controller_Front::getInstance()->registerPlugin(new ZFDebug_Controller_Plugin_Debug($options));
         }
     }
 }
