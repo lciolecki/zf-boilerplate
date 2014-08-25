@@ -1,26 +1,12 @@
 <?php
 
-use \Doctrine\Common\Cache\ArrayCache,
-    \Doctrine\Common\Cache\FilesystemCache,
-    \DI\Bridge\ZendFramework1\Dispatcher,
-    \DI\ContainerBuilder;
+use Doctrine\Common\Cache\ArrayCache,
+    Doctrine\Common\Cache\FilesystemCache,
+    DI\Bridge\ZendFramework1\Dispatcher,
+    DI\ContainerBuilder;
 
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
-    /**
-     * Initialization Doctrine EntityManager
-     *
-     * @return \Doctrine\ORM\EntityManager
-     */
-    public function _initEntityManager()
-    {
-        $resource = $this->bootstrap('doctrine');
-
-        $container = Zend_Registry::get('doctrine');
-        Zend_Registry::set('em', $container->getEntityManager('default'));
-        return $container->getEntityManager('default');
-    }
-
     /**
      * Initialization Dependency Injection
      *
@@ -34,7 +20,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
         if (APPLICATION_ENV === 'production') {
             $cache = new FilesystemCache(PROJECT_PATH . '/data/cache');
-            $cache->setNamespace('DiConfigs');
         } else {
             $cache = new ArrayCache();
         }
@@ -49,6 +34,17 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         \Zend_Registry::set(\System\Consts::DI_NAMESPACE, $dispatcher->getContainer());
 
         return $dispatcher->getContainer();
+    }
+
+    /**
+     * Initialization Doctrine Container
+     *
+     * @return \Bisna\Doctrine\Container
+     */
+    public function _initDoctrineContainer()
+    {
+        $this->bootstrap('doctrine');
+        return \Zend_Registry::get(\System\Consts::DOCTRINE);
     }
 
     /**
@@ -70,12 +66,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     protected function _initDebug()
     {
         if (APPLICATION_ENV === 'development') {
-            $em = Zend_Registry::get('em');
+            $em = Zend_Registry::get(\System\Consts::DOCTRINE)->getEntityManager();
             $em->getConnection()->getConfiguration()->setSQLLogger(new \Doctrine\DBAL\Logging\DebugStack());
 
             $cacheResource = $this->getPluginResource('cachemanager');
             $cacheManager = $cacheResource->getCacheManager();
-            $cache = $cacheManager->getCache('data');
+            $cache = $cacheManager->getCache(\System\Consts::CACHE_ID_LONG);
             $cacheBackend = $cache->getBackend();
 
             $options = array(

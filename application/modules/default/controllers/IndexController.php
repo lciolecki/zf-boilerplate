@@ -1,6 +1,8 @@
 <?php
 
-class Default_IndexController extends Zend_Controller_Action
+use System\Controller\Action;
+
+class Default_IndexController extends Action
 {
 
     public function init()
@@ -15,10 +17,8 @@ class Default_IndexController extends Zend_Controller_Action
 
     public function errorAction()
     {
-        // action body
+
     }
-
-
 }
 
 

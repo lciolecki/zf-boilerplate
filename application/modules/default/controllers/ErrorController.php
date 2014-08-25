@@ -1,8 +1,9 @@
 <?php
 
-use Extlib\Http\Response;
+use Extlib\Http\Response,
+    System\Controller\Action;
 
-class Default_ErrorController extends Zend_Controller_Action
+class Default_ErrorController extends Action
 {
     public function errorAction()
     {
