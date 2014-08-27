@@ -28,8 +28,8 @@ class Module extends AbstractPlugin
     }
 
     /**
-     * @see \Zend_Controller_Plugin_Abstract::routeShutdown()
      * @param \Zend_Controller_Request_Abstract $request
+     * @throws \Zend_Controller_Dispatcher_Exception
      */
     public function routeShutdown(\Zend_Controller_Request_Abstract $request)
     {
@@ -113,7 +113,7 @@ class Module extends AbstractPlugin
     /**
      * Method configuration module directiories (controller/views/forms/helpers/etc..)
      *
-     * @param string $modul
+     * @param $module
      */
     protected function configureDirectories($module)
     {

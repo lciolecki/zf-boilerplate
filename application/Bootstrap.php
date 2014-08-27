@@ -61,6 +61,15 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     }
 
     /**
+     * Initialization routes
+     */
+    protected function _initRoutes()
+    {
+        $router = Zend_Controller_Front::getInstance()->getRouter();
+        $router->addConfig(new Zend_Config_Ini(APPLICATION_PATH . '/configs/routes.ini', APPLICATION_ENV), 'routes');
+    }
+
+    /**
      * Initialization Zend Framework Debugger
      */
     protected function _initDebug()

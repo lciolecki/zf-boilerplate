@@ -13,7 +13,6 @@ namespace System\Controller\Plugin;
 class View extends AbstractPlugin
 {
     /**
-     * (non-PHPdoc)
      * @see \Zend_Controller_Plugin_Abstract::preDispatch()
      * @param \Zend_Controller_Request_Abstract $request
      */
